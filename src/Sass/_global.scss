@@ -1,0 +1,13 @@
+@import "./variables";
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-device-width: 700) {
+    * {
+        font-size: 0.9rem !important;
+        width: fit-content;
+        align-self: center;
+    }
+}

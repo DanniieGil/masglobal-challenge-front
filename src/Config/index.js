@@ -1,0 +1,1 @@
+export const MOVIE_URL = 'http://www.mocky.io/v2/5dc3c053300000540034757b'

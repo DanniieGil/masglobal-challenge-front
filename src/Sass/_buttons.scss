@@ -1,0 +1,23 @@
+
+// ! BUTTON 1 MODEL: RESET FILTERS BACKGROUND ORANGE + FONT WHITE.
+.resetFilters {
+    align-self: center;
+
+    button {
+        padding: 0px 1rem 0rem 1rem;
+        margin-left: 3rem;
+        border-radius: 3rem;
+        padding: 8px 12px;
+        transition: 0.5s all;
+        color: rgb(82, 82, 82);
+        background-color: #f1946b;
+
+        &:hover {
+            transform: translate(0.3rem, 0rem);
+            background-color: #fd8d5d;
+            color: black;
+            cursor: pointer;
+            font-family: CircularStd_Black;
+        }
+    }
+}
