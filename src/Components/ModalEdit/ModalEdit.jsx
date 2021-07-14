@@ -13,10 +13,6 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
         id: "",
     })
 
-    useEffect(() => {
-        console.log("open")
-    }, [])
-
     const handleSubmit = (e) => {
         console.log(e.target.value)
         e.preventDefault();
@@ -78,8 +74,8 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
                 id_movie ? <form class="rating-wrapper" onSubmit={handleSubmit} name='id_movie' id="formpost">
                     <a onClick={closeModalHandler} href="#" className="close-button"></a>
 
+                    <label htmlFor="title">Title:</label>
                     <div className="title">
-                        <label htmlFor="title">Title:</label>
                         <input type="text" placeholder={id_movie[0].title} name="title" id="title" required onChange={handleChange} />
                     </div>
 
@@ -87,9 +83,9 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
                         <img src={id_movie[0].image} alt="" srcset="" />
                     </div>
 
+                    <label htmlFor="description">Description:</label>
                     <div className="description">
-                        <label htmlFor="description">Description:</label>
-                        <textarea type="text" placeholder={id_movie[0].description} name="description" id="description" required onChange={handleChange} />
+                        <textarea type="text" placeholder={id_movie[0].description}  maxLength='300' name="description" id="description" required onChange={handleChange} />
                     </div>
 
                     <div className="release">

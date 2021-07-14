@@ -27,7 +27,6 @@ function ViewMovies() {
         localStorage.setItem('state', JSON.stringify(movies));
     }
 
-
     const showMovieDetail = (id_movie) => {
         let showMovie = movies.filter(e => e.id === id_movie)
         setCurrentMovie(showMovie)
@@ -41,8 +40,8 @@ function ViewMovies() {
 
     const editMovie = (id_movie) => {
         setshow(true)
-        setIdMovieEdit( movies.filter(e => e.id === id_movie))
-        
+        setIdMovieEdit(movies.filter(e => e.id === id_movie))
+
     }
 
     const closeModalHandler = () => {
@@ -53,36 +52,38 @@ function ViewMovies() {
 
     // * CONTENT
     return (
-        <div className='content__ViewMovies'>
-            <header className="title_column">
-                Movies 🎥
-            </header>
-            <div className="row_view">
-                <div className="column_one">
-                    {
-                        movies?.map((movie, i) => {
-                            return <div className="card_movie" key={i} onClick={() => showMovieDetail(movie.id)}>
-                                <div className="title">{movie.title}</div>
-                                <div className="release"> Release {movie.release}</div>
+        <div className="content__ViewMovies">
+            <div className={show ? 'back_drop' : ''}>
+                <header className="title_column">
+                    Movies 🎥
+                </header>
+                <div className="row_view">
+                    <div className="column_one">
+                        {
+                            movies?.map((movie, i) => {
+                                return <div className="card_movie" key={i} onClick={() => showMovieDetail(movie.id)}>
+                                    <div className="title">{movie.title}</div>
+                                    <div className="release"> Release {movie.release}</div>
 
-                                <button className="deleteMovie" onClick={() => deleteMovie(movie.id)}>❌</button>
-                                <button className="deleteMovie" onClick={() => editMovie(movie.id)}>✏️</button>
-                            </div>
-                        })
-                    }
-                </div>
-                <div className="column_two">
+                                    <button className="deleteMovie" onClick={() => deleteMovie(movie.id)}>❌</button>
+                                    <button className="deleteMovie" onClick={() => editMovie(movie.id)}>✏️</button>
+                                </div>
+                            })
+                        }
+                    </div>
+                    <div className="column_two">
 
-                    {
-                        currentMovie?.map((detail_movie, i) => {
-                            return <div className="view_Movie" key={i}>
-                                <div className="title_detail">{detail_movie.title}</div>
-                                <img src={detail_movie.image} alt="not_found" />
-                                <div className="title_description">{detail_movie.description}</div>
-                                <div className="title_released">Released: {detail_movie.release}</div>
-                            </div>
-                        })
-                    }
+                        {
+                            currentMovie?.map((detail_movie, i) => {
+                                return <div className="view_Movie" key={i}>
+                                    <div className="title_detail">{detail_movie.title}</div>
+                                    <img src={detail_movie.image} alt="not_found" />
+                                    <div className="title_description">{detail_movie.description}</div>
+                                    <div className="title_released">Released: {detail_movie.release}</div>
+                                </div>
+                            })
+                        }
+                    </div>
                 </div>
             </div>
             <div className={show ? 'contain_modal' : ""}>

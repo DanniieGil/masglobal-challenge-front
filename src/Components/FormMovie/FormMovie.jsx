@@ -65,7 +65,7 @@ function FormMovie() {
                     {
                         (newMovie.title !== '' && newMovie.description !== '' && newMovie.image !== '' && newMovie.release !== '') ?
                             <input className="button" type="submit" value="SAVE" name="submit" /> :
-                            <input className="button disabled" disabled value="SAVE" />
+                            <input className="button2 disabled" disabled value="SAVE" />
 
                     }
                     <Link to='/'>

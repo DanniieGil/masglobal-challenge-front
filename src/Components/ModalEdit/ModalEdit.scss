@@ -1,23 +1,46 @@
-.content__ModalEdit{
-    background-color: white;
-    /* width: 45rem; */
-    /* height: 15rem; */
-    color: black;
-    font-family: "Avenir_Black";
+.content__ModalEdit {
+input {
+  border-radius: 2rem;
+  margin:1rem
+}
 
-    .submit {
-        border-radius: 20px;
-        border: 1px solid #ffff01;
-        background-color: #ffff01;
-        color: #000000;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 12px 45px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: transform 80ms ease-in;
-        margin: 1rem;
-        cursor: pointer;
-        transition: 0.4s all;
-      }
+textarea{
+  margin: 13.7674px 12.7778px 12.7778px; 
+  width: 15rem; 
+  height: 8rem;
+}
+
+  background-color: white;
+  /* width: 45rem; */
+  /* height: 15rem; */
+  color: black;
+  font-family: "Avenir_Black";
+  img {
+    width: 14rem;
+    border: 1px solid gray;
+    border-radius: 2rem;
+    margin: 2rem;
+  }
+  .submit {
+    border-radius: 20px;
+    border: 1px solid #ffff01;
+    background-color: #ffff01;
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin: 1rem;
+    cursor: pointer;
+    transition: 0.4s all;
+
+    &:hover{
+      background-color: #ebeb12;
+      transform: scale(1.01);
+      border:1px solid black;
+      box-shadow: 1px 1px 1px 1px rgb(185, 184, 184);
+    }
+  }
 }
