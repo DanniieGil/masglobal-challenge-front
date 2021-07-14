@@ -1,106 +1,101 @@
 .content__FormMovie {
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 425px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px 0 rgba(#999, 0.25);
-    padding: 0.75rem;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 425px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 0 rgba(#999, 0.25);
+  padding: 0.75rem;
 
-    .title_form {
-      color: black;
-      font-weight: initial;
+  .title_form {
+    color: black;
+    font-weight: initial;
   }
 
-    .position{
-        position: relative;
-        margin-left: 7rem;
-        color: transparent;
+  .position {
+    position: relative;
+    margin-left: 7rem;
+    color: transparent;
+  }
+  input,
+  textarea {
+    appearance: none;
+    border-radius: 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0.8rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .visible {
+    display: inline;
+  }
+
+  img {
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 65%;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 0 5%;
+    position: relative;
+    width: 10rem;
+    padding: 2rem;
+  }
+
+  form {
+    padding: 2rem 1rem 0;
+  }
+
+  .button2 {
+    border-radius: 20px;
+    border: 1px solid #ffff01;
+    background-color: #ffff01;
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin: 1rem;
+  }
+
+  .button {
+    border-radius: 20px;
+    border: 1px solid #ffff01;
+    background-color: #ffff01;
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin: 1rem;
+    cursor: pointer;
+    transition: 0.4s all;
+
+    &:hover {
+      background-color: #ebeb12;
+      transform: scale(1.01);
+      border: 1px solid black;
+      box-shadow: 1px 1px 1px 1px rgb(185, 184, 184);
     }
-    input, textarea {
-        appearance: none;
-        border-radius: 0;   
-         padding: 0.5rem;
-        border-radius: 0.5rem;
-        margin: 0.8rem
-    }
+  }
+  .disabled {
+    background: rgb(139, 138, 138);
+    text-align-last: center;
+  }
 
-    .hidden{
-        display: none;
-    }
-
-    .visible{
-        display: inline;
-    }
-
-    img {
-        border-radius: 8px;
-        overflow: hidden;
-        padding-bottom: 65%;
-        background-repeat: no-repeat;
-        background-size: 150%;
-        background-position: 0 5%;
-        position: relative;
-        width: 10rem;
-        padding: 2rem;
-
-
-
-    }
-
-    form{
-        padding: 2rem 1rem 0;
-    }
-
-    .button2 {
-      border-radius: 20px;
-      border: 1px solid #ffff01;
-      background-color: #ffff01;
-      color: #000000;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 12px 45px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: transform 80ms ease-in;
-      margin: 1rem;
-    }
-
-      .button {
-        border-radius: 20px;
-        border: 1px solid #ffff01;
-        background-color: #ffff01;
-        color: #000000;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 12px 45px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: transform 80ms ease-in;
-        margin: 1rem;
-        cursor: pointer;
-        transition: 0.4s all;
-
-
-        &:hover {
-          background-color: #ebeb12;
-          transform: scale(1.01);
-          border:1px solid black;
-          box-shadow: 1px 1px 1px 1px rgb(185, 184, 184);
-        }
-      }
-.disabled{
-  background: rgb(139, 138, 138);
-  text-align-last: center;
-}
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
- 
-    
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 }
 
 :root {
@@ -121,24 +116,14 @@
   transition: 180ms box-shadow ease-in-out;
 }
 
-textarea{
-    margin: 13.7847px 12.7951px 12.7778px;
-    height: 184px;
-    width: 288px;
+textarea {
+  margin: 13.7847px 12.7951px 12.7778px;
+  height: 184px;
+  width: 288px;
 }
 .input:focus {
-  border-color: hsl(
-    var(--input-focus-h),
-    var(--input-focus-s),
-    var(--input-focus-l)
-  );
-  box-shadow: 0 0 0 3px
-    hsla(
-      var(--input-focus-h),
-      var(--input-focus-s),
-      calc(var(--input-focus-l) + 40%),
-      0.8
-    );
+  border-color: hsl(var(--input-focus-h), var(--input-focus-s), var(--input-focus-l));
+  box-shadow: 0 0 0 3px hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l) + 40%), 0.8);
   outline: 3px solid transparent;
 }
 
@@ -146,7 +131,6 @@ textarea{
   line-height: 1;
   height: 2.25rem;
 }
-
 
 textarea.input {
   resize: vertical;
@@ -158,8 +142,3 @@ textarea.input {
   background-color: #eee;
   cursor: not-allowed;
 }
-
-
-
-
-

@@ -1,26 +1,25 @@
 .content__ModalEdit {
-input {
-  border-radius: 2rem;
-  margin:1rem
-}
-
-textarea{
-  margin: 13.7674px 12.7778px 12.7778px; 
-  width: 15rem; 
-  height: 8rem;
-}
-
   background-color: white;
-  /* width: 45rem; */
-  /* height: 15rem; */
   color: black;
   font-family: "Avenir_Black";
-  img {
-    width: 14rem;
-    border: 1px solid gray;
+
+  input {
     border-radius: 2rem;
-    margin: 2rem;
+    margin: 1rem;
   }
+
+  textarea {
+    margin: 13.7674px 12.7778px 12.7778px;
+    width: 15rem;
+    height: 8rem;
+  }
+
+  img {
+    width: 5rem;
+    border: 1px solid gray;
+    border-radius: 1rem;
+  }
+
   .submit {
     border-radius: 20px;
     border: 1px solid #ffff01;
@@ -36,10 +35,10 @@ textarea{
     cursor: pointer;
     transition: 0.4s all;
 
-    &:hover{
+    &:hover {
       background-color: #ebeb12;
       transform: scale(1.01);
-      border:1px solid black;
+      border: 1px solid black;
       box-shadow: 1px 1px 1px 1px rgb(185, 184, 184);
     }
   }

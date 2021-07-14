@@ -1,3 +1,4 @@
+// * MODULES
 import React, { useState, useContext, useEffect } from 'react'
 import { DataContext } from '../../Tools/Context/DataContext'
 import { GetMoviesFn } from '../../Tools/Functions/RequestMovie'
@@ -7,7 +8,6 @@ function ViewMovies() {
 
     const { movies, setMovies } = useContext(DataContext)
     const [currentMovie, setCurrentMovie] = useState([])
-
     const cookies = JSON.parse(localStorage.getItem('state'));
 
     useEffect(() => {
@@ -21,12 +21,14 @@ function ViewMovies() {
     }, [])
 
 
+    // FUNCTION DELETE MOVIE
     const deleteMovie = (id_movie) => {
         let renderMovie = movies.filter(e => e.id !== id_movie)
         setMovies(renderMovie)
         localStorage.setItem('state', JSON.stringify(movies));
     }
 
+    // FUNCTION CLICK FOR MORE DETAIL MOVIE
     const showMovieDetail = (id_movie) => {
         let showMovie = movies.filter(e => e.id === id_movie)
         setCurrentMovie(showMovie)
@@ -37,18 +39,17 @@ function ViewMovies() {
     const [show, setshow] = useState(false)
     const [IdMovieEdit, setIdMovieEdit] = useState(false)
 
-
+    // FUNCTION FOR EDIT CURRENT MOVIE SELECTED
     const editMovie = (id_movie) => {
         setshow(true)
         setIdMovieEdit(movies.filter(e => e.id === id_movie))
-
     }
 
+    // FUNCTION FOR CLOSE MODAL OF EDIT MOVIE
     const closeModalHandler = () => {
         setshow(false)
         document.getElementById("formpost").reset();
     }
-
 
     // * CONTENT
     return (

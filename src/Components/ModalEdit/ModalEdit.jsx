@@ -1,4 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react'
+// * MODULES
+import React, { useContext, useState } from 'react'
 import Swal from 'sweetalert2';
 import { DataContext } from '../../Tools/Context/DataContext'
 
@@ -13,8 +14,8 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
         id: "",
     })
 
+    // SUBMIT THE NEW DATA OF MODIFY NEW MOVIE
     const handleSubmit = (e) => {
-        console.log(e.target.value)
         e.preventDefault();
         movies.map((el, index) => {
             if (el.id == id_movie[0].id) {
@@ -27,7 +28,6 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
                 }
             }
         })
-
         closeModalHandler()
         Swal.fire({
             title: 'Update Movie Succesfully!',
@@ -47,6 +47,7 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
         window.scrollTo(0, 0);
     }
 
+    // ONCHANGE INPUTS FOR MODIFY INFORMATION OF MOVIE
     const handleChange = e => {
         setUpdateMovie({
             title: document.getElementById('title').value,
@@ -69,6 +70,7 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
             display: show ? '' : 'none',
             visibility: show ? '' : 'hidden',
         }}>
+
             <div className="head_title"><h3>MODIFY MOVIE</h3></div>
             {
                 id_movie ? <form class="rating-wrapper" onSubmit={handleSubmit} name='id_movie' id="formpost">
@@ -78,21 +80,17 @@ function ModalEdit({ show, id_movie, closeModalHandler }) {
                     <div className="title">
                         <input type="text" placeholder={id_movie[0].title} name="title" id="title" required onChange={handleChange} />
                     </div>
-
                     <div className="image">
                         <img src={id_movie[0].image} alt="" srcset="" />
                     </div>
-
                     <label htmlFor="description">Description:</label>
                     <div className="description">
-                        <textarea type="text" placeholder={id_movie[0].description}  maxLength='300' name="description" id="description" required onChange={handleChange} />
+                        <textarea type="text" placeholder={id_movie[0].description} maxLength='300' name="description" id="description" required onChange={handleChange} />
                     </div>
-
                     <div className="release">
                         <label htmlFor="release">Release:</label>
                         <input type="text" placeholder={id_movie[0].release} name="release" id="release" required onChange={handleChange} />
                     </div>
-
                     <div className="btnsubmit">
                         <button className="submit">UPDATE</button>
                     </div>

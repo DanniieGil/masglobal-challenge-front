@@ -1,3 +1,4 @@
+// * MODULES
 import React, { useState, useContext, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
@@ -7,7 +8,6 @@ import { GetMoviesFn, ImageChangeFn } from '../../Tools/Functions/RequestMovie'
 function FormMovie() {
 
     const { movies, setMovies } = useContext(DataContext)
-
     const [newMovie, setNewMovie] = useState({
         title: "",
         description: "",
@@ -21,6 +21,7 @@ function FormMovie() {
         localStorage.setItem('state', JSON.stringify(movies));
     }, [])
 
+    // ONCHANGE INPUTS FORM
     const handleChange = e => {
         var maxid = 0;
         movies.map(obj => { if (obj.id > maxid) return maxid = obj.id });
@@ -29,6 +30,8 @@ function FormMovie() {
     }
 
     let history = useHistory();
+    
+    // SUBMIT FORM FOR ADD NEW MOVIE
     const handleSubmit = async e => {
         e.preventDefault()
         setMovies(movies.concat(newMovie))
@@ -46,10 +49,11 @@ function FormMovie() {
                 confirmButton: 'confirmButton-order-info2',
             },
         })
-        localStorage.setItem('state', JSON .stringify(movies.concat(newMovie)));
+        localStorage.setItem('state', JSON.stringify(movies.concat(newMovie)));
         history.push("/");
     }
 
+    // * CONTENT
     return (
         <div className="content__FormMovie">
             <form onSubmit={handleSubmit}>
@@ -61,19 +65,16 @@ function FormMovie() {
                 <img className={newMovie.image && newMovie.image.length !== 0 ? 'visible' : 'hidden'} src={newMovie.image} alt="" />
 
                 <div className='movie-buttons'>
-
                     {
                         (newMovie.title !== '' && newMovie.description !== '' && newMovie.image !== '' && newMovie.release !== '') ?
                             <input className="button" type="submit" value="SAVE" name="submit" /> :
                             <input className="button2 disabled" disabled value="SAVE" />
-
                     }
                     <Link to='/'>
                         <button className="button">CANCEL</button>
                     </Link>
                 </div>
             </form>
-
         </div>
     )
 }

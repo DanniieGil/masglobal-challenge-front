@@ -8,7 +8,6 @@ export const GetMoviesFn = ({ movies, setMovies }) => {
             el.id = i + 1
         });
         setMovies(response.data.movies)
-        console.log(movies)
     }).catch(err => console.log(err));
 }
 
