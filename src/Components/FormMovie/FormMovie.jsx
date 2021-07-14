@@ -26,11 +26,9 @@ function FormMovie() {
         movies.map(obj => { if (obj.id > maxid) return maxid = obj.id });
         newMovie.id = maxid + 1
         setNewMovie({ ...newMovie, [e.target.name]: e.target.value })
-
-
     }
-    let history = useHistory();
 
+    let history = useHistory();
     const handleSubmit = async e => {
         e.preventDefault()
         setMovies(movies.concat(newMovie))
@@ -49,12 +47,7 @@ function FormMovie() {
             },
         })
         localStorage.setItem('state', JSON .stringify(movies.concat(newMovie)));
-
-        history.push("/home");
-    }
-
-    function prueba() {
-        console.group(newMovie)
+        history.push("/");
     }
 
     return (
@@ -71,7 +64,7 @@ function FormMovie() {
 
                     {
                         (newMovie.title !== '' && newMovie.description !== '' && newMovie.image !== '' && newMovie.release !== '') ?
-                            <input className="button" onClick={prueba} type="submit" value="SAVE" name="submit" /> :
+                            <input className="button" type="submit" value="SAVE" name="submit" /> :
                             <input className="button disabled" disabled value="SAVE" />
 
                     }

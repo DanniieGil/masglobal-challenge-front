@@ -3,12 +3,14 @@
 @import '../Components/Navigation/Navigation.scss';
 @import '../Components/ViewMovies/ViewMovies.scss';
 @import '../Components/FormMovie/FormMovie.scss';
+@import '../Components/ModalEdit/ModalEdit.scss';
 
 
 @import '../Views/Home/Home.scss';
 @import '../Views//Add//Add.scss';
 
 /*===== EXTERNAL =====*/
+@import './animations';
 @import './global';
 @import './typography';
 @import './buttons';
